@@ -2,6 +2,7 @@ CXX = c++
 CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 NAME = ex01
 SRCS = Bureaucrat.cpp \
+		Form.cpp \
 		main.cpp
 OBJS = $(SRCS:%cpp=%o)
 

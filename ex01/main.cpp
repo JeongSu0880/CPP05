@@ -2,17 +2,11 @@
 
 int main() {
 	try {
-		Bureaucrat first("1", 149);
-		Bureaucrat second("2", 1);
+		Bureaucrat b("B", 149);
+		Form f1("form_1", 50, 60);
+		Form f2("form_2", 2, 60);
 
-		first.decrementGrade();
-		std::cout << first;//150
-		
-		// first.decrementGrade();
-		// std::cout << first; // too low
-		
-		second.incrementGrade();
-		std::cout << second; //too high
+		b.signForm(f1);
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;

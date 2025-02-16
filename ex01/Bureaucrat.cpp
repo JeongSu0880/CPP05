@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : mName(""), mGrade(150) {
+Bureaucrat::Bureaucrat() : mName("default"), mGrade(150) {
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, const int &grade) : mName(name), mGrade(grade) {
@@ -12,7 +12,7 @@ Bureaucrat::Bureaucrat(const std::string &name, const int &grade) : mName(name),
 	}
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &original) {
+Bureaucrat::Bureaucrat(const Bureaucrat &original) : mName(original.mName) {
 	*this = original;
 }
 
@@ -67,6 +67,6 @@ void Bureaucrat::signForm(Form &f) const {
 		std::cout << mName << " signed " << f.getName() << std::endl;
 	} 
 	catch (std::exception &e) {
-		std::cout << mName << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
+		std::cout << mName << " couldn't sign " << f.getName() << " because : " << e.what() << std::endl;
 	}
 }
