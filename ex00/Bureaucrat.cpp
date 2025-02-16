@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : mName(""), mGrade(150) {
+Bureaucrat::Bureaucrat() : mName("default"), mGrade(150) {
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, const int &grade) : mName(name), mGrade(grade) {
