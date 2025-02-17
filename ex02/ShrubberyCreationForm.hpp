@@ -1,36 +1,26 @@
 #pragma once
 
+#include <fstream>
 #include <iostream>
+#include "AForm.hpp"
 
-class ShrubberyCreationForm {
-	private:
-		const std::string mName;
-		bool mSignedStatus;
-		const int mSignedGrade;
-		const int mExecutedGrade;
+class AForm;
 
+class ShrubberyCreationForm : public AForm {
+	private: 
+		std::string mTarget;
 	public:
 		ShrubberyCreationForm();
-		ShrubberyCreationForm(const std::string &name, const int &signedGrade, const int &executedGrade);
+		ShrubberyCreationForm(const std::string &target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &original);
 		~ShrubberyCreationForm();
 
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &original);
 
-		const std::string &getName() const;
-		const bool &getSignedStatus() const;
-		const int &getSignedGrade() const;
-		const int &getExecutedGrade() const;
-
-		void beSigned(const Bureaucrat &b);
-		
-		class GradeTooHighException : public std::exception {
+		class FileNotOpenException : public std::exception {
 			public:
-				const char *what() const throw();
+				virtual const char *what() const throw();
 		};
 
-		class GradeTooLowException : public std::exception {
-			public:
-				const char *what() const throw();
-		};
+		void execute(const Bureaucrat &b) const;
 };

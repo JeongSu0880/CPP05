@@ -1,15 +1,18 @@
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main() {
-	try {
-		Bureaucrat b("B", 149);
-		Form f1("form_1", 50, 60);
-		Form f2("form_2", 2, 60);
+	ShrubberyCreationForm f1("test");
 
-		b.signForm(f1);
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
-
+	Bureaucrat a("A", 30);
+	a.signForm(f1);
+	a.executeForm(f1);
+	std::cout << "----------------" << std::endl;
+	Bureaucrat b("B", 140);
+	b.signForm(f1);
+	b.executeForm(f1);
+	std::cout << "----------------" << std::endl;
+	Bureaucrat c("C", 150);
+	c.signForm(f1);
+	c.executeForm(f1);
 }

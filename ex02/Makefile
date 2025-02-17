@@ -1,8 +1,11 @@
 CXX = c++
 CXXFLAGS = -Werror -Wall -Wextra -std=c++98
-NAME = ex01
+NAME = ex02
 SRCS = Bureaucrat.cpp \
-		Form.cpp \
+		AForm.cpp \
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
+		ShrubberyCreationForm.cpp \
 		main.cpp
 OBJS = $(SRCS:%cpp=%o)
 
@@ -17,6 +20,7 @@ $(NAME) : $(OBJS)
 
 clean :
 	rm -rf $(OBJS)
+	find . -type f -name "*_shrubbery" -exec rm -f {} \;
 
 fclean : clean
 	rm -rf $(NAME)
