@@ -7,6 +7,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm(
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &original) : AForm(original), mTarget(original.mTarget) {
+	*this = original;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
